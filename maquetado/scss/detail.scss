@@ -1,0 +1,31 @@
+@import 'colors';
+
+.title {
+  font-size: 32px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.titleDescription {
+  color: $color-black;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.description {
+  color: $color-grey;
+  font-size: 20px;
+}
+
+.subtitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.textAndDescription {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 10px;
+}
