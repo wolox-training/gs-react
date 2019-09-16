@@ -2,15 +2,15 @@
 
 .title {
   font-size: 32px;
-  margin-right: 10px;
   font-weight: bold;
+  margin-right: 10px;
 }
 
 .titleDescription {
   color: $color-black;
-  margin-right: 10px;
   font-size: 20px;
   font-weight: bold;
+  margin-right: 10px;
 }
 
 .description {
@@ -19,13 +19,13 @@
 }
 
 .subtitle {
-  font-weight: bold;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .textAndDescription {
   display: flex;
   justify-content: flex-start;
-  margin-top: 20px;
   margin-left: 10px;
+  margin-top: 20px;
 }
