@@ -1,26 +1,37 @@
 @import 'colors';
 
 .title {
+  font-family: Roboto;
   font-size: 32px;
   font-weight: bold;
   margin-right: 10px;
+  font-size: 32px;
+  line-height: 38px;
 }
 
 .titleDescription {
+  font-family: Roboto;
   color: $color-black;
   font-size: 20px;
   font-weight: bold;
   margin-right: 10px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .description {
+  font-family: Roboto;
   color: $color-grey;
   font-size: 20px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .subtitle {
   font-size: 24px;
   font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
 }
 
 .textAndDescription {
@@ -28,4 +39,29 @@
   justify-content: flex-start;
   margin-left: 10px;
   margin-top: 20px;
+}
+
+.contentOfBooks {
+  background-color: $color-white;
+  box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+  display: flex;
+  height: 416px;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 1000px;
+}
+
+.image {
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 368px;
+  width: 261px;
+}
+
+.separator {
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: $color-green;
+  width: 640px;
+  height: 6px; 
 }
