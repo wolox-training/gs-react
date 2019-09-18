@@ -39,7 +39,8 @@
     height: 5px;
     margin-top: 20px;
     position: absolute;
-    width: 640px;
+    max-width: 640px;
+    width: 100%;
     top: 25px;
   }
 }
