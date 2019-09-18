@@ -1,6 +1,17 @@
 # dependencies
 node_modules/
 
+### Sass ###
+.sass-cache/
+.scss-cache/
+*.css.map
+*.sass.map
+*.scss.map
+*.css
+
+## System ##
+.DS_Store
+
 # misc
 .DS_Store
 .env
