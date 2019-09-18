@@ -2,9 +2,9 @@
 
 .book-title {
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -18,7 +18,7 @@
   color: $grey;
   font-family: Roboto;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 20px;
 }
 
 .book-cover {
@@ -26,10 +26,10 @@
   box-shadow: 5px 5px 10px 0 $black-05;
   flex-direction: column;
   height: 385px;
+  margin: 30px;
   max-width: 265px;
   padding: 30px 30px 50px 30px;
   width: 100%;
-  margin: 30px;
 }
 
 .list-of-books {
