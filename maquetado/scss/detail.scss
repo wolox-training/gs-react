@@ -31,23 +31,29 @@
   line-height: 40px;
 }
 
-.book-content-title {
-  display: flex;
-  flex-direction: column;
+.line-separator {
+  position: relative;
   &::after {
     background-color: $green;
     content: "";
     height: 5px;
-    margin-left: 10px;
     margin-top: 20px;
+    position: absolute;
     width: 640px;
+    top: calc(70%);
   }
+}
+
+.book-content-title {
+  display: flex;
+  flex-direction: column;
 }
 
 .book-detail {
   display: flex;
   margin-left: 10px;
   margin-top: 20px;
+  margin-bottom: 14px;
 }
 
 .book-cover {
