@@ -31,6 +31,19 @@
   line-height: 40px;
 }
 
+.book-content-title {
+  display: flex;
+  flex-direction: column;
+  &::after {
+    background-color: $green;
+    content: "";
+    height: 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 640px;
+  }
+}
+
 .book-detail {
   display: flex;
   margin-left: 10px;
@@ -53,12 +66,4 @@
   margin-left: 10px;
   margin-top: 10px;
   width: 260px;
-}
-
-.book-separator {
-  background-color: $green;
-  height: 6px;
-  margin-left: 10px;
-  margin-top: 20px;
-  width: 640px;
 }
