@@ -39,12 +39,13 @@
 
 .book-cover {
   background-color: $white;
-  box-shadow: 5px 5px 10px 0 $black;
+  box-shadow: 5px 5px 10px 0 $black-05;
   display: flex;
   height: 415px;
   margin-left: 10px;
   margin-top: 10px;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .book-image {
