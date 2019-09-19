@@ -79,12 +79,12 @@
 .image-container {
   position: relative;
   &::before {
-    left: 220px;
     content: "";
     background-image: url("../maquetado/image/badge.png");
     background-repeat: no-repeat;
     background-size: contain;
     height: 100px;
+    left: 220px;
     position: absolute;
     transform: rotate(15deg);
     width: 100px;
