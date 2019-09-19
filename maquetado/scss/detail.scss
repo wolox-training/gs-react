@@ -9,7 +9,7 @@
   font-family: Roboto;
   font-size: 15px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -22,7 +22,7 @@
 .book-subtitle {
   color: $grey;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
 }
 
@@ -63,13 +63,13 @@
   justify-content: space-between;
   padding: 0 100px;
   position: fixed;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   width: 100%;
 }
 
 .logout {
   color: $black;
   font-family: Roboto;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 20px;
+  line-height: 20px;
 }
