@@ -80,11 +80,9 @@
   position: relative;
   &::before {
     content: "";
-    background-image: url("../maquetado/image/badge.png") no-repeat center/contain; 
-    background-repeat: no-repeat;
-    background-size: contain;
+    background: url("../maquetado/image/badge.png") no-repeat center/contain;
     height: 100px;
-    left: 220px;
+    left: 200px;
     position: absolute;
     transform: rotate(15deg);
     width: 100px;
