@@ -1,0 +1,119 @@
+@import "colors";
+
+.description-line-separator {
+  position: relative;
+  &::after {
+    background-color: $green;
+    content: "";
+    height: 5px;
+    margin-top: 20px;
+    position: absolute;
+    width: 640px;
+    top: calc(70%);
+  }
+}
+
+.description-image-container {
+  position: relative;
+  &::before {
+    content: "";
+    background: url("../maquetado/image/badge.png") no-repeat center/contain;
+    height: 100px;
+    left: 200px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 100px;
+  }
+}
+
+.description-book-cover {
+  background-color: $white;
+  box-shadow: 5px 5px 10px 0 $black-05;
+  display: flex;
+  height: 415px;
+  margin-left: 50px;
+  margin-top: 60px;
+  max-width: 1000px;
+  padding: 10px;
+  width: 100%;
+}
+
+.description-book-image {
+  height: 370px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 260px;
+}
+
+.description-book-content-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.description-book-genre {
+  color: $grey;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.description-book-detail {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+}
+
+.description-book-title {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px;
+  line-height: 40px;
+}
+
+.description-book {
+  color: $grey;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.description-book-detail-title {
+  color: $black;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 25px;
+  margin-right: 10px;
+}
+
+.description-back-button {
+  color: $grey;
+  font-family: Roboto;
+  font-size: 25px;
+  line-height: 25px;
+  margin-top: 5px;
+}
+
+.back-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.back-button-arrow-image {
+  height: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 30px;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: $light-grey;
+}
