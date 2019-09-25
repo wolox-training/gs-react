@@ -4,20 +4,20 @@
   position: relative;
   &::after {
     background-color: $green;
-    content: '';
+    content: "";
     height: 5px;
     margin-top: 20px;
     position: absolute;
-    width: 640px;
     top: 30px;
+    width: 640px;
   }
 }
 
 .description-image-container {
   position: relative;
   &::before {
-    content: '';
     background: url("../maquetado/image/badge.png") no-repeat center/contain;
+    content: "";
     height: 100px;
     left: 200px;
     position: absolute;
@@ -105,9 +105,9 @@
   font-size: 25px;
   margin-top: 10px;
   &::before {
-    content: "";
     background: url("../maquetado/image/back-arrow.png") no-repeat
       center/contain;
+    content: "";
     height: 35px;
     margin-left: 10px;
     margin-right: 10px;
@@ -124,7 +124,7 @@
 }
 
 .description-container {
+  align-items: flex-start;
   background-color: $light-grey;
   display: flex;
-  align-items: flex-start;
 }
