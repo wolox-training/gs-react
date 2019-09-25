@@ -1,23 +1,17 @@
-@import "colors";
-
 body {
   display: flex;
   justify-content: center;
 }
-
 .login-container {
+  align-items: center;
   background-color: $light-grey;
   border-top: 10px solid $light-blue;
   display: flex;
+  flex-direction: column;
   height: 400px;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 70px;
   width: 300px;
-}
-
-.login-inputs-container {
-  display: flex;
-  flex-direction: column;
   &::before {
     align-self: center;
     background: url("../maquetado/image/logoWolox.png") no-repeat center/contain;
@@ -27,18 +21,18 @@ body {
     width: 200px;
   }
 }
-
 .label {
+  align-self: flex-start;
   color: $black;
   font-family: Roboto;
   font-size: 15px;
   height: 20px;
   line-height: 25px;
   margin-bottom: 5px;
+  margin-left: 25px;
   margin-top: 10px;
   width: 40px;
 }
-
 .input {
   background-color: $white;
   border-radius: 5px;
@@ -47,12 +41,10 @@ body {
   margin-top: 10px;
   width: 252px;
 }
-
 .login-buttons-container {
   display: flex;
   flex-direction: column;
 }
-
 .primary-button {
   background-color: $green;
   border-radius: 5px;
@@ -71,7 +63,6 @@ body {
     width: 250px;
   }
 }
-
 .secondary-button {
   background-color: $light-grey;
   border: 2px solid $green;
@@ -79,14 +70,12 @@ body {
   height: 32px;
   width: 252px;
 }
-
 .primary-button-description {
   color: $white;
   font-family: Roboto;
   font-size: 16px;
   line-height: 24px;
 }
-
 .secondary-button-description {
   color: $green;
   font-family: Roboto;

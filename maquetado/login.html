@@ -8,29 +8,27 @@
     <link rel="stylesheet" type="text/css" href="application.css" />
   </head>
   <body>
-    <div class="login-container">
-      <div class="login-inputs-container">
-        <p class="label">Email</p>
-        <p><input class="input" type="text" /></p>
-        <p class="label">Password</p>
-        <p><input class="input" type="password" /></p>
-        <div class="login-buttons-container">
-          <button
-            class="primary-button"
-            type="button"
-            onclick="location.href='listOfBooks.html'"
-          >
-            <p class="primary-button-description">Login</p>
-          </button>
-          <button
-            class="secondary-button"
-            type="button"
-            onclick="location.href='listOfBooks.html'"
-          >
-            <p class="secondary-button-description">Signup</p>
-          </button>
-        </div>
+    <form class="login-container">
+      <label for="email" class="label">Email</label>
+      <input class="input" type="text" id="email" />
+      <label for="password" class="label">Password</label>
+      <input class="input" type="password" id="password" />
+      <div class="login-buttons-container">
+        <button
+          class="primary-button"
+          type="button"
+          onclick="location.href='listOfBooks.html'"
+        >
+          <p class="primary-button-description">Login</p>
+        </button>
+        <button
+          class="secondary-button"
+          type="button"
+          onclick="location.href='listOfBooks.html'"
+        >
+          <p class="secondary-button-description">Signup</p>
+        </button>
       </div>
-    </div>
+    </form>
   </body>
 </html>
