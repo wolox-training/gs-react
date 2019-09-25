@@ -16,7 +16,7 @@
 .description-image-container {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     background: url("../maquetado/image/badge.png") no-repeat center/contain;
     height: 100px;
     left: 200px;
