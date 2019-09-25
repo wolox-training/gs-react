@@ -1,90 +1,75 @@
 @import "colors";
 
+.container-books {
+  background-color: $light-grey;
+  display: flex;
+}
+
 .book-title {
   font-family: Roboto;
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
-  margin-right: 10px;
-  line-height: 40px;
-}
-
-.book-detail-title {
-  color: $black;
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 25px;
-  margin-right: 10px;
-}
-
-.book-description {
-  color: $grey;
-  font-family: Roboto;
-  font-size: 20px;
-  line-height: 25px;
-}
-
-.book-genre {
-  color: $grey;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.line-separator {
-  position: relative;
-  &::after {
-    background-color: $green;
-    content: "";
-    height: 5px;
-    margin-top: 20px;
-    position: absolute;
-    width: 640px;
-    top: calc(70%);
-  }
-}
-
-.book-content-title {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .book-detail {
   display: flex;
-  margin-left: 10px;
-  margin-top: 20px;
-  margin-bottom: 14px;
+  flex-direction: column;
+}
+
+.book-subtitle {
+  color: $grey;
+  font-family: Roboto;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .book-cover {
   background-color: $white;
   box-shadow: 5px 5px 10px 0 $black-05;
-  display: flex;
-  height: 415px;
-  margin-left: 10px;
-  margin-top: 10px;
-  max-width: 1000px;
-  padding: 10px;
+  flex-direction: column;
+  height: 385px;
+  margin: 30px;
+  max-width: 265px;
+  padding: 30px 30px 50px;
   width: 100%;
 }
 
-.book-image {
-  height: 370px;
-  margin-left: 10px;
-  margin-top: 10px;
-  width: 260px;
+.list-of-books {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
 }
 
-.image-container {
-  position: relative;
-  &::before {
-    content: "";
-    background: url("../maquetado/image/badge.png") no-repeat center/contain;
-    height: 100px;
-    left: 200px;
-    position: absolute;
-    transform: rotate(15deg);
-    width: 100px;
-  }
+.book-image {
+  height: 280px;
+  width: 200px;
+}
+
+.wolox-image {
+  height: 70px;
+  width: 200px;
+}
+
+.navbar {
+  align-items: center;
+  background-color: $white;
+  border-top: 5px solid $light-blue;
+  box-shadow: 5px 5px 10px 0 $black-05;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 0 100px;
+  position: fixed;
+  width: 100%;
+}
+
+.logout {
+  color: $black;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 20px;
 }
