@@ -9,7 +9,7 @@
     margin-top: 20px;
     position: absolute;
     width: 640px;
-    top: calc(70%);
+    top: 30px;
   }
 }
 
@@ -60,17 +60,17 @@
 
 .description-book-detail {
   display: flex;
+  margin-bottom: 14px;
   margin-left: 10px;
   margin-top: 20px;
-  margin-bottom: 14px;
 }
 
 .description-book-title {
-  font-family: Roboto;
+  font-family: Arial;
   font-size: 30px;
   font-weight: bold;
-  margin-right: 10px;
   line-height: 40px;
+  margin-right: 10px;
 }
 
 .description-book {
@@ -98,9 +98,21 @@
 }
 
 .back-button {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  font-family: Roboto;
+  font-size: 25px;
+  margin-top: 10px;
+  &::before {
+    content: "";
+    background: url("../maquetado/image/back-arrow.png") no-repeat
+      center/contain;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+  }
 }
 
 .back-button-arrow-image {
@@ -112,8 +124,7 @@
 }
 
 .description-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   background-color: $light-grey;
+  display: flex;
+  align-items: flex-start;
 }
