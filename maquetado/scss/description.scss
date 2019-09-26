@@ -2,9 +2,9 @@
 
 .description-container {
   align-items: flex-start;
-  justify-content: center;
   background-color: $light-grey;
   display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -45,7 +45,6 @@
   .description-book-cover {
     background-color: $white;
     box-shadow: 5px 5px 10px 0 $black-05;
-    display: flex;
     display: flex;
     flex-direction: column;
     height: 700px;
