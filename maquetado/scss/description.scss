@@ -11,7 +11,7 @@
   .description-container {
     align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
   }
 }
@@ -21,7 +21,12 @@
   box-shadow: 5px 5px 10px 0 $black-05;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  height: 415px;
+  grid-template-rows: 40px 40px 1fr;
+  grid-template-areas:
+    "title title"
+    "genre genre"
+    "sidebar content";
+  height: 500px;
   margin-left: 50px;
   margin-top: 60px;
   max-width: 1000px;
@@ -29,8 +34,35 @@
   width: 100%;
 }
 
+.description-book-title {
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: bold;
+  grid-area: title;
+  justify-self: center;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.description-book-genre {
+  color: $grey;
+  font-size: 20px;
+  font-weight: bold;
+  grid-area: genre;
+  justify-self: center;
+  line-height: 40px;
+}
+
+.description-book-detail {
+  display: flex;
+  margin-bottom: 14px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
 .description-image-container {
   position: relative;
+  grid-area: sidebar;
   &::before {
     background: url("../maquetado/image/badge.png") no-repeat center/contain;
     content: "";
@@ -42,71 +74,18 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .description-book-cover {
-    background-color: $white;
-    box-shadow: 5px 5px 10px 0 $black-05;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
-    height: 700px;
-    margin-left: 0px;
-    margin-top: 20px;
-    max-width: 400px;
-    padding: 10px;
-    width: 100%;
-  }
-
-  .description-image-container {
-    justify-self: center;
-  }
-}
-
-.description-book-content-title {
+.description-content-book-content {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  grid-area: content;
+  margin-left: 50px;
+  margin-top: 50px;
 }
 
 @media only screen and (max-width: 1024px) {
   .description-book-content-title {
     margin-left: 0px;
   }
-}
-
-.description-book-detail {
-  display: flex;
-  margin-bottom: 14px;
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.description-line-separator {
-  position: relative;
-  &::after {
-    background-color: $green;
-    content: "";
-    height: 5px;
-    margin-top: 20px;
-    position: absolute;
-    top: 30px;
-    width: 640px;
-  }
-}
-
-.description-book-title {
-  font-family: Arial;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 40px;
-  margin-right: 10px;
-}
-
-.description-book-genre {
-  color: $grey;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 40px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -197,4 +176,58 @@
   margin-right: 10px;
   margin-top: 10px;
   width: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .description-book-cover {
+    background-color: $white;
+    box-shadow: 5px 5px 10px 0 $black-05;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1px 1fr;
+    grid-template-areas:
+      "title"
+      "book"
+      "genre"
+      "content";
+    height: 700px;
+    margin-left: 0px;
+    margin-top: 20px;
+    max-width: 400px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .description-book-title {
+    grid-area: title;
+  }
+
+  .description-book-genre {
+    grid-area: genre;
+  }
+
+  .description-image-container {
+    grid-area: book;
+    justify-self: center;
+  }
+
+  .description-content-book-content {
+    grid-area: content;
+    justify-self: center;
+    margin-left: 0;
+    position: relative;
+    &::before {
+      background-color: $green;
+      content: "";
+      height: 5px;
+      left: 4px;
+      position: absolute;
+      top: 0px;
+      width: 300px;
+    }
+  }
+
+  .back-button {
+    margin-top: 30px;
+  }
 }
