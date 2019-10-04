@@ -1,12 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import Login from "./app/screens/Login";
-import "./App.css";
+import Login from './app/screens/Login';
+import './App.css';
+
+const handleSubmit = values => {
+  console.log(values);
+};
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Login handleSubmit={handleSubmit} />
     </div>
   );
 }

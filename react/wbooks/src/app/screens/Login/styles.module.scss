@@ -1,8 +1,36 @@
+@import "../../scss/colors.scss";
+
 .container {
   display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 20px 50px 0 50px;
+}
+
+.input {
+  background-color: $white;
+  border-radius: 2px;
+  margin: 0 50px 20px 50px;
 }
 
 .logoImage {
-  width: 200px;
+  align-self: center;
   height: 100px;
+  width: 200px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  margin-top: 40px;
+  width: 300px;
 }
