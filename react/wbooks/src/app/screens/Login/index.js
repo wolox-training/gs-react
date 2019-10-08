@@ -24,7 +24,7 @@ function Login({ initialValues, validationSchema, onSubmit }) {
               <button className={styles.SignupButton} type="submit">
                 Signup
               </button>
-              <button className={styles.loginButton} type="submit">
+              <button className={styles.loginButton} type="button">
                 Login
               </button>
             </form>
@@ -37,8 +37,8 @@ function Login({ initialValues, validationSchema, onSubmit }) {
 
 Login.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  initialValues: PropTypes.shape(),
-  validationSchema: PropTypes.shape()
+  initialValues: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  validationSchema: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 export default Login;

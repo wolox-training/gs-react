@@ -5,10 +5,7 @@ import PropTypes from 'prop-types';
 function FormWrapper({ initialValues, validationSchema, handleSubmit, children }) {
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      {({ handleChange, values, errors, ...props }) => {
-        const fieldProps = { handleChange, values, errors };
-        return children({ ...fieldProps, ...props });
-      }}
+      {props => children({ ...props })}
     </Formik>
   );
 }

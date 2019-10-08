@@ -29,11 +29,11 @@ CustomField.propTypes = {
   handleBlur: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleFocus: PropTypes.func.isRequired,
-  errors: PropTypes.shape(),
+  errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   id: PropTypes.string,
   name: PropTypes.string,
   type: PropTypes.string,
-  values: PropTypes.shape()
+  values: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 export default CustomField;

@@ -6,6 +6,7 @@
 }
 
 .SignupButton {
+  align-self: center;
   background-color: $green;
   border-radius: 5px;
   color: $white;
@@ -14,7 +15,6 @@
   height: 32px;
   line-height: 25px;
   margin-top: 30px;
-  align-self: center;
   position: relative;
   width: 250px;
   &::after {
@@ -23,28 +23,36 @@
     height: 2px;
     left: 0;
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 14px);
     width: 250px;
   }
 }
 
+.SignupButton:focus {
+  outline: none;
+}
+
 .loginButton {
+  align-self: center;
   background-color: $light-grey;
   border-radius: 5px;
   border: 2px solid $green;
   color: $green;
   font-family: Roboto;
-  align-self: center;
   font-size: 16px;
   height: 32px;
-  margin-top: 30px;
   line-height: 24px;
+  margin-top: 30px;
   width: 252px;
+}
+
+.loginButton:focus {
+  outline: none;
 }
 
 .logoImage {
   align-self: center;
-  height: 100px;
+  height: 80px;
   width: 200px;
 }
 
@@ -55,9 +63,10 @@
 
 .formContainer {
   background-color: $light-grey;
+  border-top: 5px solid $light-blue;
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 550px;
   margin-top: 40px;
   width: 300px;
 }
