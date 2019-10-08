@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Formik from '../Formik';
-
 import styles from './styles.module.scss';
 
-function CustomField({ type, handleChange, handleBlur, values, name, touched, errors, id }) {
+function CustomField({ type, name, errors, id, values, handleFocus, handleBlur, handleChange, ...props }) {
   return (
     <div className={styles.containerInput}>
       <label htmlFor={id} className={styles.label}>
@@ -14,26 +12,28 @@ function CustomField({ type, handleChange, handleBlur, values, name, touched, er
       <input
         className={styles.input}
         type={type}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={values[name]}
         name={name}
         id={id}
+        value={values[name]}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onChange={handleChange}
+        {...props}
       />
-      {errors[name] && touched[name] && <p className={styles.inputError}>{errors[name]}</p>}
+      {errors[name] && <p className={styles.inputError}>{errors[name]}</p>}
     </div>
   );
 }
 
 CustomField.propTypes = {
+  handleBlur: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleFocus: PropTypes.func.isRequired,
   errors: PropTypes.shape(),
-  handleBlur: PropTypes.func,
-  handleChange: PropTypes.func,
   id: PropTypes.string,
   name: PropTypes.string,
-  touched: PropTypes.shape(),
   type: PropTypes.string,
   values: PropTypes.shape()
 };
 
-export default Formik(CustomField);
+export default CustomField;
