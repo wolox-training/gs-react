@@ -1,32 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'formik';
 
 import Formik from '../Formik';
 
-function Login({ values, handleChange, handleBlur, style, errors, touched }) {
+import styles from './styles.module.scss';
+
+function CustomField({ type, handleChange, handleBlur, values, name, touched, errors, id }) {
   return (
-    <>
-      <Field
-        className={style}
-        type="text"
+    <div className={styles.containerInput}>
+      <label htmlFor={id} className={styles.label}>
+        {id}
+      </label>
+      <input
+        className={styles.input}
+        type={type}
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.name}
-        name="name"
+        value={values[name]}
+        name={name}
+        id={id}
       />
-      {errors.name && touched.name && <div id="feedback">{errors.name}</div>}
-    </>
+      {errors[name] && touched[name] && <p className={styles.inputError}>{errors[name]}</p>}
+    </div>
   );
 }
 
-Login.propTypes = {
+CustomField.propTypes = {
   errors: PropTypes.shape(),
   handleBlur: PropTypes.func,
   handleChange: PropTypes.func,
-  style: PropTypes.shape(),
+  id: PropTypes.string,
+  name: PropTypes.string,
   touched: PropTypes.shape(),
+  type: PropTypes.string,
   values: PropTypes.shape()
 };
 
-export default Formik(Login);
+export default Formik(CustomField);

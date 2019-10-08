@@ -12,7 +12,11 @@ module.exports = {
     'no-magic-numbers': ['error', { ignore: [0, 1, -1, 2], enforceConst: true }],
     'react/jsx-wrap-multilines': ['error', { declaration: false, assignment: false }],
     'babel/no-unused-expressions': 1,
-    'no-unused-expressions': 'off'
+    'no-unused-expressions': 'off',
+    'no-alert': 'off',
+    'no-magic-numbers': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'new-cap': 'off'
   },
   settings: {
     'import/resolver': {

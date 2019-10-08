@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'formik';
 
 import Formik from '../../components/Formik';
+import CustomField from '../../components/CustomField';
 
 import styles from './styles.module.scss';
 
@@ -14,49 +14,61 @@ function Login({ values, touched, errors, handleChange, handleBlur, handleSubmit
       <div className={styles.formContainer}>
         <img className={styles.logoImage} src={logo} />
         <form className={styles.formContent} onSubmit={handleSubmit}>
-          <Field
-            className={styles.input}
+          <CustomField
             type="text"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.name}
             name="name"
+            id="Nombre"
+            touched={touched}
+            errors={errors}
           />
-          <Field
-            className={styles.input}
+          <CustomField
             type="text"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.name}
+            value={values.lastName}
             name="lastName"
+            id="Apellido"
+            touched={touched}
+            errors={errors}
           />
-          <Field
-            className={styles.input}
-            type="text"
+          <CustomField
+            type="Email"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.name}
             name="email"
+            id="Email"
+            touched={touched}
+            errors={errors}
           />
-          <Field
-            className={styles.input}
+          <CustomField
             type="text"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.name}
             name="password"
+            id="Password"
+            touched={touched}
+            errors={errors}
           />
-          <Field
-            className={styles.input}
+          <CustomField
             type="text"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.name}
             name="confirmPassword"
+            id="Confirmación de password"
+            touched={touched}
+            errors={errors}
           />
-
-          <button className={styles.button} type="submit">
-            Submit
+          <button className={styles.SignupButton} type="button">
+            Signup
+          </button>
+          <button className={styles.loginButton} type="button">
+            Login
           </button>
         </form>
       </div>

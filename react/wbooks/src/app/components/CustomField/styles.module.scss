@@ -1,0 +1,28 @@
+@import "../../scss/colors.scss";
+
+.containerInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  align-self: flex-start;
+  margin-left: 22px;
+}
+
+.input {
+  align-self: center;
+  background-color: $white;
+  border-radius: 5px;
+  height: 15px;
+  margin: 10px 0;
+  width: 252px;
+}
+
+.inputError {
+  align-self: flex-start;
+  margin-top: -10px;
+  margin-left: 22px;
+  color: $red;
+  font-size: 10px;
+}
