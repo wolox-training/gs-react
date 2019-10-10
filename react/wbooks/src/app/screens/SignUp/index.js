@@ -8,7 +8,7 @@ import logoWolox from '../../assets/LogoWolox.png';
 
 import styles from './styles.module.scss';
 
-function Login({ initialValues, validationSchema, onSubmit }) {
+function SignUp({ initialValues, validationSchema, onSubmit }) {
   return (
     <FormWrapper initialValues={initialValues} validationSchema={validationSchema} handleSubmit={onSubmit}>
       {({ handleSubmit, ...props }) => (
@@ -33,7 +33,7 @@ function Login({ initialValues, validationSchema, onSubmit }) {
   );
 }
 
-Login.propTypes = {
+SignUp.propTypes = {
   initialValues: PropTypes.shape({
     confirmPassword: PropTypes.string,
     email: PropTypes.string,
@@ -51,4 +51,4 @@ Login.propTypes = {
   onSubmit: PropTypes.func.isRequired
 };
 
-export default Login;
+export default SignUp;

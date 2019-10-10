@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import i18next from 'i18next';
 
-import Login from './screens/Login';
+import SignUp from './screens/SignUp';
 import styles from './styles.module.scss';
 
 const initialValues = {
@@ -39,7 +39,7 @@ const validationSchema = Yup.object().shape({
 function App() {
   return (
     <div className={styles.container}>
-      <Login initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit} />
+      <SignUp initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit} />
     </div>
   );
 }
