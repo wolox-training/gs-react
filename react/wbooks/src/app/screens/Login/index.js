@@ -4,17 +4,16 @@ import i18next from 'i18next';
 
 import FormWrapper from '../../components/Formik';
 import CustomField from '../../components/CustomField';
+import logoWolox from '../../assets/LogoWolox.png';
 
 import styles from './styles.module.scss';
-
-const logo = require('../../assets/LogoWolox.png');
 
 function Login({ initialValues, validationSchema, onSubmit }) {
   return (
     <FormWrapper initialValues={initialValues} validationSchema={validationSchema} handleSubmit={onSubmit}>
       {({ handleSubmit, ...props }) => (
         <div className={styles.formContainer}>
-          <img className={styles.logoImage} src={logo} />
+          <img className={styles.logoImage} src={logoWolox} />
           <form className={styles.formContent} onSubmit={handleSubmit}>
             <CustomField type="text" name="name" id="Nombre" {...props} />
             <CustomField type="text" name="lastName" id="Apellido" {...props} />
