@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useReducer, useEffect } from 'react';
 import * as Yup from 'yup';
 import i18next from 'i18next';
 
 import SignUp from './screens/SignUp';
 import styles from './styles.module.scss';
+import { actionCreateUser } from './actions';
 
 const initialValues = {
   name: '',
@@ -13,9 +14,11 @@ const initialValues = {
   confirmPassword: ''
 };
 
-const handleSubmit = (values, actions) => {
+const handleSubmit = (dispatch, state) => (values, actions) => {
+  dispatch({ type: 'createUser', payload: values });
+
   setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
+    alert(JSON.stringify(state, null, 2));
     actions.setSubmitting(false);
   }, 1000);
 };
@@ -35,11 +38,35 @@ const validationSchema = Yup.object().shape({
     .required(i18next.t('Validations:fieldEmpty')),
   password: Yup.string().required(i18next.t('Validations:fieldEmpty'))
 });
+const initialState = { user: {} };
 
+function reducer(state, action) {
+  switch (action.type) {
+    case 'createUser':
+      return { user: action.payload };
+    default:
+      return state;
+  }
+}
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    actionCreateUser().then(response => {
+      dispatch({
+        type: 'createUser',
+        payload: response
+      });
+    });
+  }, []);
+
   return (
     <div className={styles.container}>
-      <SignUp initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit} />
+      <SignUp
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit(dispatch, state)}
+      />
     </div>
   );
 }
