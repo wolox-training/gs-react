@@ -7,20 +7,20 @@ function CustomField({ type, name, errors, id, values, handleFocus, handleBlur, 
   return (
     <div className={styles.containerInput}>
       <label htmlFor={id} className={styles.label}>
-        {id}
+        {name}
       </label>
       <input
         className={styles.input}
         type={type}
         name={name}
         id={id}
-        value={values[name]}
+        value={values[id]}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onChange={handleChange}
         {...props}
       />
-      {errors[name] && <p className={styles.inputError}>{errors[name]}</p>}
+      {errors[id] && <p className={styles.inputError}>{errors[id]}</p>}
     </div>
   );
 }
@@ -29,11 +29,11 @@ CustomField.propTypes = {
   handleBlur: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleFocus: PropTypes.func.isRequired,
-  errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  errors: PropTypes.shape({}),
   id: PropTypes.string,
   name: PropTypes.string,
   type: PropTypes.string,
-  values: PropTypes.object // eslint-disable-line react/forbid-prop-types
+  values: PropTypes.shape({})
 };
 
 export default CustomField;
