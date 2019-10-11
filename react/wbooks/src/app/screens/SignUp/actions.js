@@ -1,6 +1,5 @@
-import { createUser } from '../services/AuthServices';
-
-import { normalizeCreateUser } from './utlis.js/AuthUtils';
+import { createUser } from '../../../services/AuthServices';
+import { normalizeCreateUser } from '../../utils/AuthUtils';
 
 export const actionCreateUser = async user => {
   const userNormalize = normalizeCreateUser(user);

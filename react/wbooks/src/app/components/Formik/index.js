@@ -11,9 +11,9 @@ function FormWrapper({ initialValues, validationSchema, handleSubmit, children }
 }
 
 FormWrapper.propTypes = {
-  handleSubmit: PropTypes.func.isRequired, // eslint-disable-line react/forbid-prop-types
-  initialValues: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  validationSchema: PropTypes.object // eslint-disable-line react/forbid-prop-types
+  handleSubmit: PropTypes.func.isRequired,
+  initialValues: PropTypes.shape({}),
+  validationSchema: PropTypes.shape({})
 };
 
 export default FormWrapper;
