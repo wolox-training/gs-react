@@ -15,8 +15,6 @@ const initialValues = {
 };
 
 const handleSubmit = (dispatch, state) => (values, actions) => {
-  dispatch({ type: 'createUser', payload: values });
-
   setTimeout(() => {
     alert(JSON.stringify(state, null, 2));
     actions.setSubmitting(false);
@@ -52,7 +50,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    actionCreateUser().then(response => {
+    actionCreateUser(initialValues).then(response => {
       dispatch({
         type: 'createUser',
         payload: response
