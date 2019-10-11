@@ -31,11 +31,16 @@ function SignUp() {
         <div className={styles.formContainer}>
           <img className={styles.logoImage} src={logoWolox} />
           <form className={styles.formContent} onSubmit={handleSubmit}>
-            <CustomField type="text" name="Nombre" id="name" {...props} />
-            <CustomField type="text" name="Apellido" id="lastName" {...props} />
-            <CustomField type="email" name="Email" id="email" {...props} />
-            <CustomField type="password" name="Contraseña" id="password" {...props} />
-            <CustomField type="password" name="Confirmar contraseña" id="confirmPassword" {...props} />
+            <CustomField type="text" nameInput="name" nameLabel="Nombre" {...props} />
+            <CustomField type="text" nameInput="lastName" nameLabel="Apellido" {...props} />
+            <CustomField type="email" nameInput="email" nameLabel="Email" {...props} />
+            <CustomField type="password" nameInput="password" nameLabel="Contraseña" {...props} />
+            <CustomField
+              type="password"
+              nameInput="confirmPassword"
+              nameLabel="Confirmar contraseña"
+              {...props}
+            />
             <button className={styles.SignupButton} type="submit">
               {i18next.t('SIGNUP:signUp')}
             </button>

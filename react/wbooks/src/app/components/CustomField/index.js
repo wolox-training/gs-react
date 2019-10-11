@@ -3,24 +3,34 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.module.scss';
 
-function CustomField({ type, name, errors, id, values, handleFocus, handleBlur, handleChange, ...props }) {
+function CustomField({
+  type,
+  nameInput,
+  errors,
+  values,
+  handleFocus,
+  handleBlur,
+  handleChange,
+  nameLabel,
+  ...props
+}) {
   return (
     <div className={styles.containerInput}>
-      <label htmlFor={id} className={styles.label}>
-        {name}
+      <label htmlFor={nameInput} className={styles.label}>
+        {nameLabel}
       </label>
       <input
         className={styles.input}
         type={type}
-        name={name}
-        id={id}
-        value={values[id]}
+        name={nameInput}
+        id={nameInput}
+        value={values[nameInput]}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onChange={handleChange}
         {...props}
       />
-      {errors[id] && <p className={styles.inputError}>{errors[id]}</p>}
+      {errors[nameInput] && <p className={styles.inputError}>{errors[nameInput]}</p>}
     </div>
   );
 }
@@ -32,6 +42,8 @@ CustomField.propTypes = {
   errors: PropTypes.shape({}),
   id: PropTypes.string,
   name: PropTypes.string,
+  nameInput: PropTypes.string,
+  nameLabel: PropTypes.string,
   type: PropTypes.string,
   values: PropTypes.shape({})
 };
