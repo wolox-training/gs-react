@@ -8,10 +8,11 @@ import logoWolox from '../../assets/LogoWolox.png';
 import { validationSchemaSignUp } from '../../utils/validations';
 import { initialValuesSignUp } from '../../constants/auth';
 
-import { actionCreateUser } from './actions';
+import { actionCreateUser, setToken } from './actions';
 import styles from './styles.module.scss';
 
 const onSubmit = values => {
+  localStorage.setItem('myData', values);
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
   }, 1000);
@@ -33,6 +34,7 @@ function SignUp() {
 
   useEffect(() => {
     actionCreateUser(initialValuesSignUp).then(response => {
+      setToken(response.data.access_token || '');
       dispatch({
         type: 'createUser',
         payload: response

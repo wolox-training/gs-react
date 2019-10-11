@@ -9,3 +9,5 @@ export const actionCreateUser = async user => {
   }
   return { ok: false, problem: userCreated.problem };
 };
+
+export const setToken = token => localStorage.setItem('token_id', token);
