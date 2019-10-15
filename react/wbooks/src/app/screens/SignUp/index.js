@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import i18next from 'i18next';
 
@@ -7,25 +7,36 @@ import CustomField from '../../components/CustomField';
 import logoWolox from '../../assets/LogoWolox.png';
 import { validationSchemaSignUp } from '../../utils/validations';
 import { initialValuesSignUp } from '../../constants/auth';
+import { createUser, setToken } from '../../../services/AuthServices';
 
+import actionCreators from './reducer/actions';
 import styles from './styles.module.scss';
+import reducer, { initialState } from './reducer/reducer';
 
-const onSubmit = (values, actions) => {
+const onSubmit = values => {
+  localStorage.setItem('myData', values);
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
-    actions.setSubmitting(false);
   }, 1000);
 };
 
 function SignUp() {
-  const onSubmitSignUp = useCallback((values, actions) => {
-    onSubmit(values, actions);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    createUser(initialValuesSignUp).then(response => {
+      setToken(response.data.access_token || '');
+      dispatch(actionCreators.createUser(response));
+    });
   }, []);
+
+  const onSubmitSignUp = useCallback(values => () => onSubmit(values), []);
+
   return (
     <FormWrapper
       initialValues={initialValuesSignUp}
       validationSchema={validationSchemaSignUp}
-      handleSubmit={onSubmitSignUp}
+      handleSubmit={onSubmitSignUp(state)}
     >
       {({ handleSubmit, ...props }) => (
         <div className={styles.formContainer}>

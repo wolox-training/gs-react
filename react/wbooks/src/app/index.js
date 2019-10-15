@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SignUp from './screens/SignUp';
 import styles from './styles.module.scss';
+import SignUp from './screens/SignUp';
 
 function App() {
   return (
