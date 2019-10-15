@@ -3,6 +3,7 @@
 .containerInput {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .label {
@@ -15,14 +16,15 @@
   background-color: $white;
   border-radius: 5px;
   height: 15px;
-  margin: 10px 0;
+  margin: 15px 0;
   width: 252px;
 }
 
 .inputError {
+  position: absolute;
   align-self: flex-start;
   color: $red;
   font-size: 10px;
   margin-left: 22px;
-  margin-top: -10px;
+  top: 43px;
 }
