@@ -83,20 +83,6 @@ function SignUp() {
 }
 
 SignUp.propTypes = {
-  // initialValues: PropTypes.shape({
-  //   confirmPassword: PropTypes.string,
-  //   email: PropTypes.string,
-  //   lastName: PropTypes.string,
-  //   name: PropTypes.string,
-  //   password: PropTypes.string
-  // }).isRequired,
-  // validationSchema: PropTypes.shape({
-  //   confirmPassword: PropTypes.func,
-  //   email: PropTypes.func,
-  //   lastName: PropTypes.func,
-  //   name: PropTypes.func,
-  //   password: PropTypes.func
-  // }).isRequired,
   onSubmit: PropTypes.func.isRequired
 };
 
