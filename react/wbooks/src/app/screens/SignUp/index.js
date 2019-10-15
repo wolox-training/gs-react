@@ -9,9 +9,9 @@ import { validationSchemaSignUp } from '../../utils/validations';
 import { initialValuesSignUp } from '../../constants/auth';
 import { createUser, setToken } from '../../../services/AuthServices';
 
-import actionCreators from './actions';
+import actionCreators from './reducer/actions';
 import styles from './styles.module.scss';
-import reducer, { initialState } from './reducer';
+import reducer, { initialState } from './reducer/reducer';
 
 const onSubmit = values => {
   localStorage.setItem('myData', values);
@@ -30,12 +30,7 @@ function SignUp() {
     });
   }, []);
 
-  const onSubmitSignUp = useCallback(
-    values => () => {
-      onSubmit(values);
-    },
-    []
-  );
+  const onSubmitSignUp = useCallback(values => () => onSubmit(values), []);
 
   return (
     <FormWrapper
