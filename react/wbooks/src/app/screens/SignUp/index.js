@@ -7,9 +7,11 @@ import CustomField from '../../components/CustomField';
 import logoWolox from '../../assets/LogoWolox.png';
 import { validationSchemaSignUp } from '../../utils/validations';
 import { initialValuesSignUp } from '../../constants/auth';
+import { createUser, setToken } from '../../../services/AuthServices';
 
-import { actionCreateUser, setToken } from './actions';
+import actionCreators from './actions';
 import styles from './styles.module.scss';
+import reducer, { initialState } from './reducer';
 
 const onSubmit = values => {
   localStorage.setItem('myData', values);
@@ -18,27 +20,13 @@ const onSubmit = values => {
   }, 1000);
 };
 
-const initialState = { user: {} };
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'createUser':
-      return { user: action.payload };
-    default:
-      return state;
-  }
-}
-
 function SignUp() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    actionCreateUser(initialValuesSignUp).then(response => {
+    createUser(initialValuesSignUp).then(response => {
       setToken(response.data.access_token || '');
-      dispatch({
-        type: 'createUser',
-        payload: response
-      });
+      dispatch(actionCreators.createUser(response));
     });
   }, []);
 
