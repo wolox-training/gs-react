@@ -9,8 +9,8 @@ function App() {
   return (
     <Router>
       <div className={styles.container}>
-        <Route exact path="/Signup" component={SignUp} />
-        <Route path="/Login" component={Login} />
+        <Route exact path="/sign_up" component={SignUp} />
+        <Route path="/" component={Login} />
       </div>
     </Router>
   );
