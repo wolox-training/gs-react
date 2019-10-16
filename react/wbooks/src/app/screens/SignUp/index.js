@@ -1,6 +1,7 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import i18next from 'i18next';
+import { Link } from 'react-router-dom';
 
 import FormWrapper from '../../components/Formik';
 import CustomField from '../../components/CustomField';
@@ -55,9 +56,9 @@ function SignUp() {
             <button className={styles.SignupButton} type="submit">
               {i18next.t('SIGNUP:signUp')}
             </button>
-            <button className={styles.loginButton} type="button">
+            <Link className={styles.loginButton} to="/Login">
               {i18next.t('SIGNUP:login')}
-            </button>
+            </Link>
           </form>
         </div>
       )}
