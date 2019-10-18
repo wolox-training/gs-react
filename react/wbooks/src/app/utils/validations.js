@@ -16,3 +16,9 @@ export const validationSchemaSignUp = Yup.object().shape({
     .required(i18next.t('Validations:fieldEmpty')),
   password: Yup.string().required(i18next.t('Validations:fieldEmpty'))
 });
+
+export const validationSchemaLogin = Yup.object().shape({
+  email: Yup.string()
+    .email(i18next.t('Validations:invalidEmail'))
+    .required(i18next.t('Validations:fieldEmpty'))
+});
