@@ -1,7 +1,7 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
 import { Link } from 'react-router-dom';
+import { t } from 'i18next';
 
 import FormWrapper from '../../components/Formik';
 import CustomField from '../../components/CustomField';
@@ -31,13 +31,13 @@ function Login() {
     });
   }, []);
 
-  const onSubmitLogin = useCallback(values => () => onSubmit(values), []);
+  const onSubmitLogin = useCallback(() => onSubmit(state), [state]);
 
   return (
     <FormWrapper
       initialValues={initialValuesSignUp}
       validationSchema={validationSchemaLogin}
-      handleSubmit={onSubmitLogin(state)}
+      handleSubmit={onSubmitLogin}
     >
       {({ handleSubmit, ...props }) => (
         <div className={styles.formContainer}>
@@ -46,10 +46,10 @@ function Login() {
             <CustomField type="email" nameInput="email" nameLabel="Email" {...props} />
             <CustomField type="password" nameInput="password" nameLabel="Contraseña" {...props} />
             <button className={styles.loginButton} type="submit">
-              {i18next.t('LOGIN:login')}
+              {t('LOGIN:login')}
             </button>
             <Link className={styles.SignupButton} to="/sign_up">
-              {i18next.t('LOGIN:signUp')}
+              {t('LOGIN:signUp')}
             </Link>
           </form>
         </div>
