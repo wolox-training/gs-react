@@ -1,6 +1,6 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import { t } from 'i18next';
 import { Link } from 'react-router-dom';
 
 import FormWrapper from '../../components/Formik';
@@ -31,13 +31,15 @@ function SignUp() {
     });
   }, []);
 
-  const onSubmitSignUp = useCallback(values => () => onSubmit(values), []);
+  const onSubmitSignUp = useCallback(() => {
+    onSubmit(state);
+  }, [state]);
 
   return (
     <FormWrapper
       initialValues={initialValuesSignUp}
       validationSchema={validationSchemaSignUp}
-      handleSubmit={onSubmitSignUp(state)}
+      handleSubmit={onSubmitSignUp}
     >
       {({ handleSubmit, ...props }) => (
         <div className={styles.formContainer}>
@@ -54,10 +56,10 @@ function SignUp() {
               {...props}
             />
             <button className={styles.SignupButton} type="submit">
-              {i18next.t('SIGNUP:signUp')}
+              {t('SIGNUP:signUp')}
             </button>
             <Link className={styles.loginButton} to="/Login">
-              {i18next.t('SIGNUP:login')}
+              {t('SIGNUP:login')}
             </Link>
           </form>
         </div>
