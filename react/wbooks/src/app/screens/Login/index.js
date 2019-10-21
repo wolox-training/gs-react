@@ -14,24 +14,22 @@ import actionCreators from './reducer/actions';
 import styles from './styles.module.scss';
 import reducer, { initialState } from './reducer/reducer';
 
-const onSubmit = values => {
-  localStorage.setItem('logged_user', values);
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-  }, 1000);
-};
-
-function Login() {
+function Login({ history }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const onSubmitLogin = useCallback(() => {
+    localStorage.setItem('logged_user', state);
+    if (state.user.ok) {
+      history.push('/home');
+    }
+  }, [history, state]);
 
   useEffect(() => {
     login(initialValuesSignUp).then(response => {
       setToken(response.data.access_token || '');
       dispatch(actionCreators.login(response));
     });
-  }, []);
-
-  const onSubmitLogin = useCallback(() => onSubmit(state), [state]);
+  }, [history]);
 
   return (
     <FormWrapper
@@ -59,7 +57,10 @@ function Login() {
 }
 
 Login.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  })
 };
 
 export default Login;
