@@ -20,12 +20,16 @@ function SignUp({ history }) {
   const onSubmitSignUp = useCallback(
     values => {
       createUser(values).then(response => {
-        setToken(response.data.access_token || '');
-        dispatch(actionCreators.createUser(response));
         if (response.ok) {
+          setToken(response.data.access_token || '');
+          dispatch(actionCreators.createUser(response));
           setTimeout(() => {
             alert(JSON.stringify(t('SIGNUP:successRegistrer'), null, 2));
             history.push('/');
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            alert(JSON.stringify(t('SIGNUP:errorRegistrer'), null, 2));
           }, 1000);
         }
       });
