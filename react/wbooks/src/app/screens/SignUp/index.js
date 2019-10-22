@@ -14,15 +14,8 @@ import actionCreators from './reducer/actions';
 import styles from './styles.module.scss';
 import reducer, { initialState } from './reducer/reducer';
 
-const onSubmit = values => {
-  localStorage.setItem('signup', values);
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-  }, 1000);
-};
-
-function SignUp() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+function SignUp({ history }) {
+  const [, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     createUser(initialValuesSignUp).then(response => {
@@ -31,9 +24,21 @@ function SignUp() {
     });
   }, []);
 
-  const onSubmitSignUp = useCallback(() => {
-    onSubmit(state);
-  }, [state]);
+  const onSubmitSignUp = useCallback(
+    values => {
+      createUser(values).then(response => {
+        setToken(response.data.access_token || '');
+        dispatch(actionCreators.createUser(response));
+        if (response.ok) {
+          setTimeout(() => {
+            alert(JSON.stringify(t('SIGNUP:successRegistrer'), null, 2));
+            history.push('/');
+          }, 1000);
+        }
+      });
+    },
+    [history]
+  );
 
   return (
     <FormWrapper
@@ -69,6 +74,9 @@ function SignUp() {
 }
 
 SignUp.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   onSubmit: PropTypes.func.isRequired
 };
 
