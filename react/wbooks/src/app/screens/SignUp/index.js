@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'i18next';
 import { Link } from 'react-router-dom';
@@ -16,13 +16,6 @@ import reducer, { initialState } from './reducer/reducer';
 
 function SignUp({ history }) {
   const [, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    createUser(initialValuesSignUp).then(response => {
-      setToken(response.data.access_token || '');
-      dispatch(actionCreators.createUser(response));
-    });
-  }, []);
 
   const onSubmitSignUp = useCallback(
     values => {
