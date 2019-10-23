@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className={styles.container}>
         <PublicRoute exact path="/" component={Login} redirect="/home" />
-        <PrivateRoute exact path="/home" component={Home} redirect="/login" />
+        <PrivateRoute exact path="/home" component={Home} redirect="/" />
         <PublicRoute path="/sign_up" component={SignUp} redirect="/home" />
       </div>
     </Router>
