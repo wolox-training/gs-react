@@ -23,14 +23,10 @@ function SignUp({ history }) {
         if (response.ok) {
           setToken(response.data.access_token || '');
           dispatch(actionCreators.createUser(response));
-          setTimeout(() => {
-            alert(JSON.stringify(t('SIGNUP:successRegistrer'), null, 2));
-            history.push('/');
-          }, 1000);
+          alert(JSON.stringify(t('SIGNUP:successRegistrer'), null, 2));
+          history.push('/');
         } else {
-          setTimeout(() => {
-            alert(JSON.stringify(t('SIGNUP:errorRegistrer'), null, 2));
-          }, 1000);
+          alert(JSON.stringify(t('SIGNUP:errorRegistrer'), null, 2));
         }
       });
     },

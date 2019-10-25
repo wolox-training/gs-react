@@ -25,9 +25,7 @@ function Login({ history }) {
           dispatch(actionCreators.login(response));
           history.push('/home');
         } else {
-          setTimeout(() => {
-            alert(JSON.stringify(t('LOGIN:error'), null, 2));
-          }, 1000);
+          alert(JSON.stringify(t('LOGIN:error'), null, 2));
         }
       });
     },
