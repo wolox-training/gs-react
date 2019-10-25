@@ -16,7 +16,8 @@ module.exports = {
     'no-alert': 'off',
     'no-magic-numbers': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'new-cap': 'off'
+    'new-cap': 'off',
+    'no-case-declarations': 'off'
   },
   settings: {
     'import/resolver': {
