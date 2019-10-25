@@ -15,7 +15,7 @@ import styles from './styles.module.scss';
 import reducer, { initialState } from './reducer/reducer';
 
 const onSubmit = values => {
-  localStorage.setItem('signup', values);
+  localStorage.setItem('myData', values);
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
   }, 1000);
@@ -58,7 +58,7 @@ function SignUp() {
             <button className={styles.SignupButton} type="submit">
               {t('SIGNUP:signUp')}
             </button>
-            <Link className={styles.loginButton} to="/">
+            <Link className={styles.loginButton} to="/Login">
               {t('SIGNUP:login')}
             </Link>
           </form>

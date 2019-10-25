@@ -9,10 +9,3 @@ export const normalizeCreateUser = ({ name, lastName, email, password, confirmPa
     locale: 'en'
   }
 });
-
-export const normalizeLogin = ({ email, password }) => ({
-  session: {
-    email,
-    password
-  }
-});
