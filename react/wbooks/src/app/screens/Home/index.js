@@ -6,9 +6,7 @@ import logoWolox from '../../assets/LogoWolox.png';
 
 import styles from './styles.module.scss';
 
-const clearTokens = () => {
-  localStorage.setItem('token_id', '');
-};
+const clearTokens = () => localStorage.clear();
 
 function Home() {
   return (
