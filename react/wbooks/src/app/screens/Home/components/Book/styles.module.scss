@@ -1,0 +1,21 @@
+@import "../../../../scss/colors.scss";
+
+.bookImage {
+  height: 280px;
+  width: 200px;
+}
+
+.bookCover {
+  display: flex;
+  background-color: $white;
+  box-shadow: 5px 5px 10px 0 $black-05;
+  flex-direction: column;
+  height: 385px;
+  margin: 30px;
+  max-width: 265px;
+  padding: 30px 30px 50px;
+  width: 100%;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

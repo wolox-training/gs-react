@@ -7,7 +7,7 @@ function PublicRoute({ component: Component, redirect, ...rest }) {
     <Route
       {...rest}
       render={props =>
-        localStorage.getItem('token_id') ? <Redirect to={redirect} /> : <Component {...props} />
+        localStorage.getItem('tokenId') ? <Redirect to={redirect} /> : <Component {...props} />
       }
     />
   );
