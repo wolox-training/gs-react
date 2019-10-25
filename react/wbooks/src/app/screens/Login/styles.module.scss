@@ -1,5 +1,69 @@
-.container{
-  display: flex;
-  justify-content: center;
+@import "../../scss/colors.scss";
+
+.loginButton {
+  align-self: center;
+  background-color: $green;
+  border-radius: 5px;
+  color: $white;
+  font-family: Roboto;
+  font-size: 15px;
+  height: 32px;
+  line-height: 25px;
   margin-top: 30px;
+  position: relative;
+  width: 250px;
+  &::after {
+    background-color: $grey;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: calc(100% + 14px);
+    width: 250px;
+  }
+}
+
+.SignupButton:focus {
+  outline: none;
+}
+
+.SignupButton {
+  align-self: center;
+  background-color: $light-grey;
+  border-radius: 5px;
+  border: 2px solid $green;
+  color: $green;
+  font-family: Roboto;
+  font-size: 16px;
+  height: 32px;
+  line-height: 24px;
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  width: 252px;
+}
+
+.loginButton:focus {
+  outline: none;
+}
+
+.logoImage {
+  align-self: center;
+  height: 80px;
+  width: 200px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  background-color: $light-grey;
+  border-top: 5px solid $light-blue;
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  margin-top: 40px;
+  width: 300px;
 }
