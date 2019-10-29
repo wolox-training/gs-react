@@ -2,11 +2,15 @@ import React from 'react';
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 
+import styles from './styles.module.scss';
+
 function FormWrapper({ initialValues, validationSchema, handleSubmit, children }) {
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      {props => children({ ...props })}
-    </Formik>
+    <div className={styles.container}>
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+        {props => children({ ...props })}
+      </Formik>
+    </div>
   );
 }
 

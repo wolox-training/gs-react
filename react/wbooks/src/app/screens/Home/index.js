@@ -29,19 +29,21 @@ function Home() {
       }
     });
   }, []);
-  console.log();;
+
   return (
-    <nav className={styles.navbar}>
-      <img className={styles.woloxImage} src={logoWolox} alt="Wolox" />
-      <Link className={styles.logout} to="/" onClick={clearTokens}>
-        {t('HOME:logOut')}
-      </Link>
+    <body className={styles.container}>
+      <nav className={styles.navbar}>
+        <img className={styles.woloxImage} src={logoWolox} alt="Wolox" />
+        <Link className={styles.logout} to="/" onClick={clearTokens}>
+          {t('HOME:logOut')}
+        </Link>
+      </nav>
       <div className={styles.listOfBooks}>
         {state.books.data.map(book => (
           <Book key={book.id} title={book.title} autho={book.author} />
         ))}
       </div>
-    </nav>
+    </body>
   );
 }
 

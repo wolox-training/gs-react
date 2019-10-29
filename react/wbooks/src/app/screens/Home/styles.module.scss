@@ -29,8 +29,20 @@
   margin-right: 30px;
 }
 
-.listOfBook {
+.listOfBooks {
   display: flex;
   flex-wrap: wrap;
   margin-top: 100px;
+  justify-content: flex-start;
+}
+
+.container {
+  background-color: $light-grey;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+body {
+  margin: 0;
 }
