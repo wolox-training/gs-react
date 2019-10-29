@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { t } from 'i18next';
@@ -14,24 +14,23 @@ import actionCreators from './reducer/actions';
 import styles from './styles.module.scss';
 import reducer, { initialState } from './reducer/reducer';
 
-const onSubmit = values => {
-  localStorage.setItem('logged_user', values);
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-  }, 1000);
-};
+function Login({ history }) {
+  const [, dispatch] = useReducer(reducer, initialState);
 
-function Login() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    login(initialValuesSignUp).then(response => {
-      setToken(response.data.access_token || '');
-      dispatch(actionCreators.login(response));
-    });
-  }, []);
-
-  const onSubmitLogin = useCallback(() => onSubmit(state), [state]);
+  const onSubmitLogin = useCallback(
+    values => {
+      login(values).then(response => {
+        if (response.ok) {
+          setToken(response.data.access_token || '');
+          dispatch(actionCreators.login(response));
+          history.push('/home');
+        } else {
+          alert(JSON.stringify(t('LOGIN:error'), null, 2));
+        }
+      });
+    },
+    [history]
+  );
 
   return (
     <FormWrapper
@@ -59,6 +58,9 @@ function Login() {
 }
 
 Login.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   onSubmit: PropTypes.func.isRequired
 };
 

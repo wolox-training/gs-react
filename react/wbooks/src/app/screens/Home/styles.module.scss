@@ -1,0 +1,30 @@
+@import "../../scss/colors.scss";
+
+.navbar {
+  align-items: center;
+  background-color: $white;
+  border-top: 5px solid $light-blue;
+  box-shadow: 5px 5px 10px 0 $black-05;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.woloxImage {
+  height: 70px;
+  width: 200px;
+  margin-left: 30px;
+}
+
+.logout {
+  color: $black;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  margin-right: 30px;
+}
