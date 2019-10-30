@@ -1,5 +1,5 @@
 import { api, setHeader } from '../config/api';
-import { normalizeCreateUser, normalizeLogin } from '../app/utils/authUtils';
+import { normalizeCreateUser, normalizeLogin } from '../app/utils/AuthUtils';
 
 export const serviceCreateUser = body => api.post('/users', body);
 

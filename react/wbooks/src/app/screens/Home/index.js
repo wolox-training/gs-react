@@ -31,7 +31,7 @@ function Home() {
   }, []);
 
   return (
-    <body className={styles.container}>
+    <div className={styles.container}>
       <nav className={styles.navbar}>
         <img className={styles.woloxImage} src={logoWolox} alt="Wolox" />
         <Link className={styles.logout} to="/" onClick={clearTokens}>
@@ -40,10 +40,10 @@ function Home() {
       </nav>
       <div className={styles.listOfBooks}>
         {state.books.data.map(book => (
-          <Book key={book.id} title={book.title} autho={book.author} />
+          <Book key={book.id} title={book.title} author={book.author} />
         ))}
       </div>
-    </body>
+    </div>
   );
 }
 
