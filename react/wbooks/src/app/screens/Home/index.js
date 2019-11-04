@@ -11,9 +11,7 @@ import reducer, { initialState } from './reducer/reducer';
 import styles from './styles.module.scss';
 import Book from './components/Book';
 
-const clearTokens = () => {
-  localStorage.setItem('tokenId', '');
-};
+const clearTokens = () => localStorage.setItem('tokenId', '');
 
 const camelCaseSerializer = new CamelcaseSerializer();
 

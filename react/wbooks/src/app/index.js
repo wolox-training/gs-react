@@ -10,9 +10,9 @@ import PublicRoute from './components/PublicRoute';
 function App() {
   return (
     <Router>
-      <PublicRoute exact path="/" component={Login} redirect="/home" />
-      <PrivateRoute exact path="/home" component={Home} redirect="/" />
-      <PublicRoute path="/signUp" component={SignUp} redirect="/home" />
+      <PublicRoute exact path="/" component={Login} />
+      <PrivateRoute exact path="/home" component={Home} />
+      <PublicRoute path="/signUp" component={SignUp} />
     </Router>
   );
 }
