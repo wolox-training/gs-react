@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 
 function Book({ id, title, author }) {
   return (
-    <Link style={{ textDecoration: 'none', color: 'black' }} to={`/home/book/${id}`}>
+    <Link className={styles.container} to={`/home/book/${id}`}>
       <div className={styles.bookCover}>
         <img className={styles.bookImage} src={logoBook} alt="Wolox" />
         <h3 className={styles.title}>{title}</h3>

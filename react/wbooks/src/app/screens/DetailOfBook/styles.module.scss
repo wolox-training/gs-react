@@ -1,0 +1,138 @@
+@import "../../scss/colors.scss";
+
+.container {
+  background-color: $light-grey;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.backButton {
+  height: 30px;
+  width: 40px;
+  margin: 10px 10px;
+}
+
+.containerBackButton {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-family: Roboto;
+  font-size: 25px;
+  margin-top: 10px;
+  text-decoration: none!important;
+  color: $black;
+  &::before {
+    background: url("../../assets/back-arrow.png") no-repeat
+      center/contain;
+    content: "";
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+  }
+}
+
+
+.bookContainer {
+  background-color: $white;
+  box-shadow: 5px 5px 10px 0 $black-05;
+  display: flex;
+  height: 415px;
+  margin-left: 50px;
+  margin-top: 60px;
+  max-width: 1000px;
+  padding: 10px;
+  width: 100%;
+}
+
+.bookImageContainer {
+  position: relative;
+  &::before {
+    background: url("../../assets/badge.png") no-repeat center/contain;
+    content: "";
+    height: 100px;
+    left: 200px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 100px;
+  }
+}
+
+.bookImage {
+  height: 370px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 260px;
+}
+
+body {
+  margin: 0;
+}
+
+.detailBookContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.titleContainer {
+  display: flex;
+  margin-bottom: 14px;
+  margin-left: 10px;
+  margin-top: 20px;
+  position: relative;
+  align-items: center;
+  &::after {
+    background-color: $green;
+    content: "";
+    height: 5px;
+    margin-top: 20px;
+    position: absolute;
+    top: 60px;
+    width: 640px;
+  }
+}
+
+.bookTitle {
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.bookGenre {
+  color: $grey;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.descriptionBookContainer {
+  display: flex;
+  margin-bottom: 14px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+
+.descriptionBookTitle {
+  color: $black;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 25px;
+  margin-right: 10px;
+}
+
+.descriptionBook {
+  color: $grey;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 25px;
+}
