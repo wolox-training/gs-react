@@ -2,7 +2,9 @@ import * as Yup from 'yup';
 import { t } from 'i18next';
 
 export const validationSchemaSignUp = Yup.object().shape({
-  confirmPassword: Yup.string().required(t('Validations:fieldEmpty')),
+  confirmPassword: Yup.string()
+    .required(t('Validations:fieldEmpty'))
+    .oneOf([Yup.ref('password'), null], t('Validations:invalidConfirmPassword')),
   email: Yup.string()
     .email(t('Validations:invalidEmail'))
     .required(t('Validations:fieldEmpty')),
@@ -20,5 +22,6 @@ export const validationSchemaSignUp = Yup.object().shape({
 export const validationSchemaLogin = Yup.object().shape({
   email: Yup.string()
     .email(t('Validations:invalidEmail'))
-    .required(t('Validations:fieldEmpty'))
+    .required(t('Validations:fieldEmpty')),
+  password: Yup.string().required(t('Validations:fieldEmpty'))
 });

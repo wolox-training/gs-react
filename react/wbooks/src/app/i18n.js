@@ -6,5 +6,6 @@ i18next.addResources('spain', 'Validations', {
   longName: 'El nombre es demasiado largo',
   longLastName: 'El apellido es demasiado largo',
   fieldEmpty: 'Campo Requerido',
-  invalidEmail: 'Email inválido'
+  invalidEmail: 'Email inválido',
+  invalidConfirmPassword: 'Las contraseñas deben coincidir'
 });

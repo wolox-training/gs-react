@@ -5,6 +5,13 @@
   width: 200px;
 }
 
+
+.container {
+  text-decoration: none!important;
+  color: $black;
+}
+
+
 .bookCover {
   background-color: $white;
   box-shadow: 5px 5px 10px 0 $black-05;

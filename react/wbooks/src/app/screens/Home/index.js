@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { t } from 'i18next';
 import { CamelcaseSerializer } from 'cerealizr';
 
@@ -15,7 +16,7 @@ const clearTokens = () => localStorage.setItem('tokenId', '');
 
 const camelCaseSerializer = new CamelcaseSerializer();
 
-function Home() {
+function Home({ history }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -27,7 +28,6 @@ function Home() {
       }
     });
   }, []);
-
   return (
     <div className={styles.container}>
       <nav className={styles.navbar}>
@@ -38,11 +38,17 @@ function Home() {
       </nav>
       <div className={styles.listOfBooks}>
         {state.books.data.map(book => (
-          <Book key={book.id} title={book.title} author={book.author} />
+          <Book key={book.id} id={book.id} title={book.title} author={book.author} history={history} />
         ))}
       </div>
     </div>
   );
 }
+
+Home.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired
+};
 
 export default Home;
