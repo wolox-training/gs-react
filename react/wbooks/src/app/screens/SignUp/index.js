@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'i18next';
 import { Link } from 'react-router-dom';
@@ -14,26 +14,28 @@ import actionCreators from './reducer/actions';
 import styles from './styles.module.scss';
 import reducer, { initialState } from './reducer/reducer';
 
-const onSubmit = values => {
-  localStorage.setItem('myData', values);
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
-  }, 1000);
-};
+function SignUp({ history }) {
+  const [, dispatch] = useReducer(reducer, initialState);
 
-function SignUp() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    createUser(initialValuesSignUp).then(response => {
-      setToken(response.data.access_token || '');
-      dispatch(actionCreators.createUser(response));
-    });
-  }, []);
-
-  const onSubmitSignUp = useCallback(() => {
-    onSubmit(state);
-  }, [state]);
+  const onSubmitSignUp = useCallback(
+    values => {
+      createUser(values).then(response => {
+        if (response.ok) {
+          setToken(response.data.access_token || '');
+          dispatch(actionCreators.createUser(response));
+          setTimeout(() => {
+            alert(JSON.stringify(t('SIGNUP:successRegistrer'), null, 2));
+            history.push('/');
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            alert(JSON.stringify(t('SIGNUP:errorRegistrer'), null, 2));
+          }, 1000);
+        }
+      });
+    },
+    [history]
+  );
 
   return (
     <FormWrapper
@@ -55,10 +57,10 @@ function SignUp() {
               nameLabel="Confirmar contraseña"
               {...props}
             />
-            <button className={styles.SignupButton} type="submit">
+            <button className={styles.signupButton} type="submit">
               {t('SIGNUP:signUp')}
             </button>
-            <Link className={styles.loginButton} to="/Login">
+            <Link className={styles.loginButton} to="/">
               {t('SIGNUP:login')}
             </Link>
           </form>
@@ -69,6 +71,9 @@ function SignUp() {
 }
 
 SignUp.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   onSubmit: PropTypes.func.isRequired
 };
 

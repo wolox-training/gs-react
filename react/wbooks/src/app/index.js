@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import styles from './styles.module.scss';
 import SignUp from './screens/SignUp';
 import Login from './screens/Login';
+import Home from './screens/Home';
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
 
 function App() {
   return (
     <Router>
-      <div className={styles.container}>
-        <Route exact path="/" component={Login} />
-        <Route path="/sign_up" component={SignUp} />
-      </div>
+      <PublicRoute exact path="/" component={Login} />
+      <PrivateRoute exact path="/home" component={Home} />
+      <PublicRoute path="/signUp" component={SignUp} />
     </Router>
   );
 }
