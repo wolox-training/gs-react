@@ -49,7 +49,7 @@ function Login({ history }) {
             <button className={styles.loginButton} type="submit">
               {t('LOGIN:login')}
             </button>
-            <Link className={styles.SignupButton} to="/sign_up">
+            <Link className={styles.signupButton} to="/signUp">
               {t('LOGIN:signUp')}
             </Link>
           </form>

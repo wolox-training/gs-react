@@ -57,7 +57,7 @@ function SignUp({ history }) {
               nameLabel="Confirmar contraseña"
               {...props}
             />
-            <button className={styles.SignupButton} type="submit">
+            <button className={styles.signupButton} type="submit">
               {t('SIGNUP:signUp')}
             </button>
             <Link className={styles.loginButton} to="/">

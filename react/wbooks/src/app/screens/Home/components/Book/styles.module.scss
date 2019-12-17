@@ -1,0 +1,39 @@
+@import "../../../../scss/colors.scss";
+
+.bookImage {
+  height: 280px;
+  width: 200px;
+}
+
+.bookCover {
+  background-color: $white;
+  box-shadow: 5px 5px 10px 0 $black-05;
+  flex-direction: column;
+  height: 330px;
+  margin: 30px;
+  max-width: 200px;
+  padding: 30px 30px 50px;
+  width: 100%;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.title {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.author {
+  color: $grey;
+  font-family: Roboto;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+// I added it beacuse in h3 and p React put margin-block-start and margin-block-end of 1em by default
+h3, p{
+  margin: 0;
+}

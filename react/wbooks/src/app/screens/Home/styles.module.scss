@@ -28,3 +28,24 @@
   text-decoration: none;
   margin-right: 30px;
 }
+
+.listOfBooks {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  justify-content: flex-start;
+}
+
+// I added position absolute in container because i can't put color in the fullscreen
+.container {
+  background-color: $light-grey;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
